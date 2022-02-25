@@ -1,4 +1,5 @@
 ﻿using System;
+using RectangleProject.Models;
 
 namespace RectangleProject
 {

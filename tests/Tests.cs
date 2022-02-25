@@ -1,3 +1,17 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+
+using RectangleProject;
+using RectangleProject.Models;
+
+
+
 namespace RectangleProject.Tests
 {
     [TestClass()]
