@@ -6,30 +6,52 @@ namespace RectangleProject.Models
 {
     public class Rectangle
     {
-        public double SideA, SideB;
+        private double sideA, sideB;
 
         public Rectangle(double SideA, double SideB)
         {
-            this.SideA = SideA;
-            this.SideB = SideB;
+            this.sideA = SideA;
+            this.sideB = SideB;
+        }
+        public double SideA
+        {
+            get
+            {
+                return sideA;
+            }
+            set
+            {
+                sideA = value;
+            }
+        }
+        public double SideB
+        {
+            get
+            {
+                return sideB;
+            }
+            set
+            {
+                sideB = value;
+            }
         }
         public double Area
         {
             get
             {
-                return Math.Round(SideA * SideB,2);
+                return Math.Round(sideA * sideB,2);
             }
         }
         public double Perimeter
         {
             get
             {
-                return Math.Round((2 * (SideA + SideB)),2);
+                return Math.Round((2 * (sideA + sideB)),2);
             }
         }
         public override string ToString()
         {
-            return "A téglalap a oldala: "+SideA+" a B oldala: "+SideB+" kerülete: "+Perimeter+" területe: "+Area;
+            return "A téglalap a oldala: "+sideA+" a B oldala: "+sideB+" kerülete: "+Perimeter+" területe: "+Area;
         }
     }
 }
