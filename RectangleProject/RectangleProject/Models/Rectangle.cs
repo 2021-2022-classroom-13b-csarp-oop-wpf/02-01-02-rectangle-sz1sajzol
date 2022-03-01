@@ -10,9 +10,18 @@ namespace RectangleProject.Models
 
         public Rectangle(double SideA, double SideB)
         {
+            if (sideA <= 0)
+                throw new RectangleSideIsNullOrZero(sideA + " oldalú négyzet nincs. A négyzetet nem jön létre.");
+            if (sideB <= 0)
+                throw new RectangleSideIsNullOrZero(sideB + " oldalú négyzet nincs. A négyzetet nem jön létre.");
+
+
             this.sideA = SideA;
             this.sideB = SideB;
         }
+
+
+
         public double SideA
         {
             get
@@ -21,7 +30,12 @@ namespace RectangleProject.Models
             }
             set
             {
-                sideA = value;
+                if(SideA <= 0)
+                    throw new RectangleSideIsNullOrZero(SideA + " oldalú négyzet nincs. A négyzetet nem jön létre.");
+                else
+                {
+                    sideA = value;
+                }
             }
         }
         public double SideB
@@ -32,7 +46,12 @@ namespace RectangleProject.Models
             }
             set
             {
-                sideB = value;
+                if (SideB <= 0)
+                    throw new RectangleSideIsNullOrZero(SideB + " oldalú négyzet nincs. A négyzetet nem jön létre.");
+                else
+                {
+                    sideB = value;
+                }
             }
         }
         public double Area
@@ -51,7 +70,7 @@ namespace RectangleProject.Models
         }
         public override string ToString()
         {
-            return "A téglalap a oldala: "+sideA+" a B oldala: "+sideB+" kerülete: "+Perimeter+" területe: "+Area;
+            return "A téglalap A oldala: "+sideA+" a B oldala: "+sideB+" kerülete: "+Perimeter+" területe: "+Area;
         }
     }
 }
